@@ -8,9 +8,20 @@ loginBtn.addEventListener("click", function(){
     // حطينا الفاليو كرمال يعطيني اللي كتبنا بقلبن بدال التاغ تبعن
     let accessUser = usernameEl.value 
     let accessPass = passwordEl.value
-    for(let i =0; i<=accounts.length;i++){
+    let found = false
+    for(let i in accounts){
         if(accessUser == accounts[i][0] && accessPass == accounts[i][1]){
-            console.log (`welcome ${accessUser}`)
+            alert(`welcome ${accessUser}`)
+            found = true
         }
     }
+    if(found == false){
+        alert('invalid username or password')
+    }
+    // for(let i =0; i<=accounts.length;i++){
+    //     if(accessUser == accounts[i][0] && accessPass == accounts[i][1]){
+    //         console.log (`welcome ${accessUser}`)
+    //     }
+    // }
+
 })
